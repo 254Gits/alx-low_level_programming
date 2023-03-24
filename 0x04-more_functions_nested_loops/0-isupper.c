@@ -12,13 +12,12 @@
 
 int _isupper(int c)
 {
-	if (c <= 'Z')
+	if (c <= 'Z' && c >= 'A')
 	{
-		if (c >= 'A')
-		{
-			return (1);
-		}
 		return (1);
 	}
-	return (0);
+	else 
+	{
+		return (0);
+	}
 }
