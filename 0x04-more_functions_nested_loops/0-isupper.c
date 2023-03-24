@@ -16,7 +16,7 @@ int _isupper(int c)
 	{
 		return (1);
 	}
-	if (c <= 91)
+	if (c < 91)
 	{
 		return (1);
 	}
