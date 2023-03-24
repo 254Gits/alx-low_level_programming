@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * print_numbers- Entry point.
+ * print_diagonal- Entry point.
  *
+ * @n : interger
  *description -printing intergers
  *
  */
@@ -18,7 +19,7 @@ void print_diagonal(int n)
 	}
 	else
 	{
-		for (d =0; d < n; d++)
+		for (d = 0; d < n; d++)
 		{
 			for (x = 0; x < d; x++)
 			{
@@ -28,4 +29,4 @@ void print_diagonal(int n)
 			_putchar ('\n');
 		}
 	}
-}	
+}
