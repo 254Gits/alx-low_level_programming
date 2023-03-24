@@ -14,10 +14,10 @@ int _isupper(int c)
 {
 	if (c <= 90)
 	{
-		return (1);
-	}
-	if (c == 65)
-	{
+		if (c == 65)
+		{
+			return (1);
+		}
 		return (1);
 	}
 	else
