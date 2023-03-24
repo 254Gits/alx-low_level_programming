@@ -3,18 +3,18 @@
 /**
  * print_numbers- Entry point.
  *
- *description : printing intergers
+ *description -printing intergers
  *
  */
 
 void print_numbers(void)
 {
-	int c = 0;
+	int i = 0;
 
-	while (c <= 10)
+	while (i < 10)
 	{
-		_putchar ('0' + c);
-		c++;
+		_putchar ('0' + i);
+		i++;
 	}
 	_putchar ('\n');
 }
