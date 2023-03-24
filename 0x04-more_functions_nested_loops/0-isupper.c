@@ -6,7 +6,7 @@
  *@c: first integer
  *
  *
- * Return: 0
+ * Return: 1 for upper and 0 for anything else
  *
  */
 
