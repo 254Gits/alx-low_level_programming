@@ -2,7 +2,7 @@
 
 /**
  * reset_to_98- Entry point.
- *description - *n changes value to 98
+ *description - int *n changes value to 98
  *@int *n: variable
  *
  *
