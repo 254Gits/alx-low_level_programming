@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * rev_string - function to reverse
- * @s: string to reverse
+ * puts2 - function to print out even intergers
+ * @str: string to reverse
  * Return: 0;
  */
 
