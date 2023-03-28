@@ -4,7 +4,7 @@
   * _strlen - Swaps the values of two integers
   *
   * @ len: The length of the string
-  * @ s: pointer to s
+  * @s: pointer to s
   *
   * Return: length
   */
