@@ -7,6 +7,7 @@
  * @n: maximum number of bytes
  * Return: pointer dest  string
  */
+
 char *_strncat(char *dest, char *src, int n)
 {
 	int i;
