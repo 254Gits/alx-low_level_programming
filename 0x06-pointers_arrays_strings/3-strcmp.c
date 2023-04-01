@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcmp - function to concatenate to the maximum value of n
+ * _strcmp - function to compare two string s1 and s2
  * @s1: string one
  * @s2:string two
  * 
