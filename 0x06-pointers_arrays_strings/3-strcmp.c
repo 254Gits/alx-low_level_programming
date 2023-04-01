@@ -2,10 +2,10 @@
 
 /**
  * _strcmp - function to compare two strings s1 and s2
- * @s1:first  string 
- * @s2:second string 
- * 
- * Return: value of differnce in ascii code
+ * @s1:first  string
+ * @s2:second string
+ *
+ * Return: value of comparison in ascii code
  */
 
 int _strcmp(char *s1, char *s2)
