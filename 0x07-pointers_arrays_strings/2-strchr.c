@@ -3,10 +3,10 @@
 /**
   * *_strchr - checks for occurence of c character
   *
-  * @s: string a
+  * @s: string pointer
   * @c : character c
   *
-  * Return: null and s
+  * Return: s
   */
 
 char *_strchr(char *s, char c)
