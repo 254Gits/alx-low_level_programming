@@ -9,22 +9,13 @@
  * Return: pointer to the first occurrence of c in the string
  *         and NULL if the character is not found
  */
+
 char *_strchr(char *s, char c)
 {
 	while (*s != '\0')
 	{
-		if (*s == c)
-		{
-			if (c == '\0')
-			{
-				return (s);
-			}
-			if (c != '\0')
-			{
-				return ('\0');
-			}
+		if (*s == c || (c == '\0' && *s == '\0'))
 			return (s);
-		}
 		s++;
 	}
 	return (NULL);
