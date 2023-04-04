@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
   * *_strchr - checks for occurence of c character
@@ -27,5 +28,5 @@ char *_strchr(char *s, char c)
 		}
 		s++;
 	}
-	return ('\0');
+	return (NULL);
 }
