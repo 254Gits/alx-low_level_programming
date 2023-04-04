@@ -2,11 +2,11 @@
 #include <stddef.h>
 
 /**
- * *_strspn - entry point
- * @s: pointer to the string
+ * *_strpbrk - entry point
+ * @s: pointer to character string
  * @accept:bytes store
  *
- * Return: leghth of prefix
+ * Return: pointer that matches btyte in accept or null if mo such bytte exsist
  */
 char *_strpbrk(char *s, char *accept)
 {
@@ -16,7 +16,7 @@ char *_strpbrk(char *s, char *accept)
 	{
 		for (p = accept; *p; p++)
 		{
-			if ( *p == *s)
+			if (*p == *s)
 			{
 				return (s);
 			}
