@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stddef.h>
 
 /**
  * *_strspn - entry point
@@ -10,29 +10,18 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int count= 0;
+	char *p;
 
-	do { 
-		if (*s == accept)
+	while (*s)
+	{
+		for (p = accept; *p; p++)
+		{
+			if ( *p == *s)
 			{
 				return (s);
 			}
 		}
-	while (*s)
-	{
-		char *p = accept;
-
-		if (*s == *p)
-		{
-			count++;
-			break;
-		}
-		p++;
+		s++;
 	}
-	if (!*p && *p != '\0')
-		break;
-	s++;
-	return (count);
-	}while (s++);
-	return (0);
+	return (NULL);
 }
