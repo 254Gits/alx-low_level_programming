@@ -1,8 +1,8 @@
 #include "main.h"
-#include <stddefh>
+#include <stddef.h>
 
 /**
- * _strchr - finds the first occurrence of a character in a string
+ * *_strchr - finds the first occurrence of a character in a string
  * @s: pointer to the string to search
  * @c: search for c
  *
