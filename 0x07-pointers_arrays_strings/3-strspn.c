@@ -2,18 +2,27 @@
 
 
 /**
- * *_strspn - returns index of first character
+ * *_strspn - entry point
  * @s: pointer to the string
  * @accept:bytes store
  *
- * Return: s
+ * Return: leghth of prefix
  */
 
 unsigned int _strspn(char *s, char *accept)
 {
-	while (s == accept)
+	unsigned int count = 0;
+	char *p;
+	while (*s)
 	{
-		return (*accept);
+		p = accept;
+		while (*p && *p != *s)
+		{
+			p++;
+			if (*p == '\0')
+				count++;
+			s++;
+		}
 	}
-	return (0);
+	return (count);
 }
