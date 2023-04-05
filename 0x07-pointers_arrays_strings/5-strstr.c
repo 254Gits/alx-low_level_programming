@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stddef.h>
 
 /**
  * *_strspn - entry point
@@ -11,17 +11,24 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	char p;
+	char *p = haystack;
 
-	while (*haystack)
+	while (*p)
 	{
-		for (p = needle; *p; *p++)
-		{
-			if (*haystack == *needle)
-			{
-				return (haystack);
-			}
-			haystack ++
-		}
-		return (NULL);
+		char *h = p;
+		char *s = needle;
+	
+	while (*h == *s && *s)
+	{
+		h++;
+		s++;
+	}
+
+	if (!*s)
+	{
+		return (p);
+	}
+	p++;
+	}
+	return (NULL);
 }
