@@ -2,11 +2,11 @@
 #include <stddef.h>
 
 /**
- * *_strspn - entry point
- * @s: pointer to the string
- * @accept:bytes store
+ * *_strstr - entry point
+ * @haystack: storage of string
+ * @needle:substring function
  *
- * Return: leghth of prefix
+ * Return: haystack
  */
 
 char *_strstr(char *haystack, char *needle)
@@ -17,7 +17,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		char *h = p;
 		char *s = needle;
-	
+
 	while (*h == *s && *s)
 	{
 		h++;
