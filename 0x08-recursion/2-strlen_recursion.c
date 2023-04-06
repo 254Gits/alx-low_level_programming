@@ -2,21 +2,18 @@
 #include <stdio.h>
 
 /**
- * *_print_rev_recursion- entry point
+ * _strlen_recursion- entry point
  * @s:pointer to char
  *
- * Return: nothing
+ * Return: nothing and initial character plus the rest of the string
  */
 
 int _strlen_recursion(char *s)
 {
-	int len = 0;
 
 	if (*s != '\0')
 	{
-		len++;
-		s++;
+		return (0);
 	}
-	return (len);
-	_strlen_recursion(s+1);
+	return ((1) + _strlen_recursion(s + 1));
 }
