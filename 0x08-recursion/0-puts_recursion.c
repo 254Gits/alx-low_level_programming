@@ -1,17 +1,20 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * *_puts_recursion- entry point
  * @s:pointer to char
  *
- * Return: pointer s
+ * Return: nothing
  */
 
 void _puts_recursion(char *s)
 {
-	char p;
-
-	char p = *s;
-	return (*s);
-	
+    if (*s == '\0')
+    {
+	    _putchar('\n');
+	    return;
+    }
+    _putchar(*s);
+    _puts_recursion(s + 1);
 }
