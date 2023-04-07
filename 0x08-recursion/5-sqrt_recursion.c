@@ -2,30 +2,42 @@
 #include <stdio.h>
 
 /**
- * _sqrt_recursion- entry point
- * @n:pointer to int
- * 
- *
- * Return: n and G/2
- */
+  * _sqrt - entry point
+  * @n: int to calculate square
+  * @i: iterate through no
+  *
+  * Return: the natural square root or -1 if no natural square root
+  */
+int _sqrt(int n, int i)
+{
+	if (i * i == n)
+	{
+		return (i);
+	}
+	else if (i * i > n)
+	{
+		return (-1);
+	}
+	else
+	{
+		return (_sqrt(n, i + 1));
+	}
+}
+
+/**
+  * _sqrt_recursion - Returns the natural square root
+  * @n: intergers to calculate the natural square root
+  *
+  * Return: the natural square root or -1 if no natural square root
+  */
 int _sqrt_recursion(int n)
 {
-    if (n < 0) {
-        return -1;
-    } else if (n == 0 || n == 1) {
-        return n;
-    } else {
-        return _sqrt_helper(n, n/2);
-    }
+	if (n < 0)
+	{
+		return (-1);
+	}
+	else
+	{
+		return (_sqrt(n, 0));
+	}
 }
-
-int _sqrt_helper(int n, int guess) {
-    if (guess * guess == n) {
-        return guess;
-    } else if (guess * guess < n) {
-        return _sqrt_helper(n, guess+1);
-    } else {
-        return _sqrt_helper(n, guess/2); 
-    }
-}
-
