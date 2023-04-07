@@ -2,21 +2,30 @@
 #include <stdio.h>
 
 /**
- * _pow_recursion- entry point
- * @x:pointer to int
- * @y: int pointer
+ * _sqrt_recursion- entry point
+ * @n:pointer to int
+ * 
  *
- * Return: nothing
+ * Return: n and G/2
  */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-		return (-1);
-
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-
-	return (_sqrt_recursion(n, 1, n)); 
+    if (n < 0) {
+        return -1;
+    } else if (n == 0 || n == 1) {
+        return n;
+    } else {
+        return _sqrt_helper(n, n/2);
+    }
 }
+
+int _sqrt_helper(int n, int guess) {
+    if (guess * guess == n) {
+        return guess;
+    } else if (guess * guess < n) {
+        return _sqrt_helper(n, guess+1);
+    } else {
+        return _sqrt_helper(n, guess/2); 
+    }
+}
+
