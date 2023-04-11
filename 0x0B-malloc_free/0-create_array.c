@@ -2,26 +2,27 @@
 #include <stdlib.h>
 
 /**
-  *main - entry point
-  * @argv: array pointer
-  * @argc: argument count
+  *create_array - entry point
+  * @size: int pointer
+  * @c: charcter pointer
   *
-  * Return: 0
+  * Return: NULL
   */
 
 char *create_array(unsigned int size, char c)
 {
 	char *s;
-	
-	s = malloc((c * sizeof(char)));
+	unsigned int i;
+
+	s = malloc((size * sizeof(char)));
 	if (size == 0)
 	{
 		return (NULL);
 	}
-	else 
-	{
-		return (s);
-	}
-	return (0);
 
+	for (i = 0; i < size; i++)
+	{
+		s[i] = c;
+	}
+	return (s);
 }
