@@ -2,33 +2,46 @@
 #include <stdlib.h>
 
 /**
-  *create_array - entry point
-  * @size: int pointer
-  * @c: charcter pointer
+  *str_concat- entry point
+  * @s2: character pointer
+  * @s2: charcter pointer
   *
   * Return: NULL
   */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int a;
-	unsigned int z = 0;
-	char *s;
+	int len1, len2, i, j = 0;
+	char *result;
 
-	if (s1 == NULL || s2 == NULL)
+	while (s1[len1] != '\0')
+	{
+		len1++;
+	}
+
+	while (s2[len2] != '\0')
+	{
+		len2++;
+	}
+
+	result = malloc(len1 + len2 + 1);
+
+	if (result == NULL)
 	{
 		return (NULL);
 	}
 
-	while (s1[z])
+	while (s1[i] != '\0')
 	{
-		z++;
+		result[i] = s1[i];
+		i++;
 	}
 
-	s = malloc(z +1);
-
-	for (a = 0; a < z; a++)
+	while (s2[j] != '\0')
 	{
-		s1[z + a] = s2[a];
+		result[i + j] = s2[j];
+		j++;
 	}
-	return (NULL);
+
+	result[i + j] = '\0';
+	return (result);
 }
