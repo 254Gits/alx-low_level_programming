@@ -4,7 +4,7 @@
 /**
   *free_grid - entry point
   *
-  * @**grid: grid double pointer
+  * @grid: grid double pointer
   * @height: height interger
   *
   * Return: NULL
