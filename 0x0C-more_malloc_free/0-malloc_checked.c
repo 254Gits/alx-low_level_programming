@@ -1,23 +1,21 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
   *malloc_checked - entry point
   *
-  * @int: grid double pointer
-  * 
+  * @b: grid double pointer
   *
-  * Return: p
+  *
+  * Return: p and exit 98 if it fails
   */
 void *malloc_checked(unsigned int b)
 {
-	int *p;
+	unsigned int *c = malloc(b);
 
-	p = malloc (b*sizeof(int));
-	if (p == NULL)
+	if (c == NULL)
 	{
-		exit (98);
+		exit(98);
 	}
-	return(p);
-
+	return (c);
 }
