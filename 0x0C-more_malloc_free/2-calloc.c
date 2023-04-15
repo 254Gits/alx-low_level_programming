@@ -35,10 +35,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	char *j;
 	unsigned int full_size;
 
-	if (nmemb == 0 && size == 0)
-	{
+	if (nmemb == 0 || size == 0)
 		return (NULL);
-	}
 
 	full_size = nmemb * size;
 	j = malloc(full_size);
