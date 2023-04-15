@@ -11,23 +11,21 @@
 
 int main(int argc, char *argv[])
 {
-	int i, j, add;
+	long int sum = 0;
+	int i;
 
-	i = atoi(argv[1]);
-	j = atoi(argv[2]);		
-
-	if (argc == 0)
+	for (i = 1; i < argc; i++)
 	{
-		printf("0\n");
+		if (*argv[i] >= '0' && *argv[i] <= '9')
+		{
+			sum += atoi(argv[i]);
+		}
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
-	if (argv[i] > 30 && argv[i] <= 39)
-	{
-		printf("Error\n");
-		return (1);
-	}
-
-	add = i + j;
-	printf("%d\n", add);
+	printf("%ld\n", sum);
 	return (0);
 }
-
