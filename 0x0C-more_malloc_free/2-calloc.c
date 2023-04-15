@@ -41,13 +41,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 
 	full_size = nmemb * size;
-
 	j = malloc(full_size);
 
 	if (j == NULL)
-	{
 		return (NULL);
-	}
+
 	_memset(j, 0, full_size);
 	return (j);
 }
