@@ -1,6 +1,26 @@
 #include <stdlib.h>
 #include "main.h"
 
+
+/**
+ * *_memset - copies character b to  first s pointer
+ * @s:pointer of memory area
+ * @b: constant byte
+ * @n : unsigned interger
+ * Return: pointer to s
+ */
+
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
+}
+
 /**
   *_calloc - entry point
   *
@@ -12,9 +32,12 @@
   */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *j;
+	char *j;
+	unsigned int full_size;
 
-	j = (unsigned int *)calloc(nmemb, size);
+	full_size = size * size;
+
+	j = malloc(full_size);
 
 	if (j == NULL)
 	{
@@ -24,5 +47,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
+	_memset(j, 0, full_size);
 	return (j);
 }
