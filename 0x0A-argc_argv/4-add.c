@@ -11,14 +11,19 @@
 
 int main(int argc, char *argv[])
 {
-	long int sum = 0;
+	long int s = 0;
 	int i;
+
+	if (argc <= 1)
+	{
+		printf("0\n");
+	}
 
 	for (i = 1; i < argc; i++)
 	{
 		if (*argv[i] >= '0' && *argv[i] <= '9')
 		{
-			sum += atoi(argv[i]);
+			s += atoi(argv[i]);
 		}
 		else
 		{
@@ -26,6 +31,6 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
-	printf("%ld\n", sum);
+	printf("%ld\n", s);
 	return (0);
 }
