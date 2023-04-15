@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
   *main - entry point
@@ -8,29 +9,26 @@
   *
   * Return: 0 and 1
   */
-
 int main(int argc, char *argv[])
 {
-	long int s = 0;
-	int i;
+	int i, sum = 0;
 
-	if (argc <= 1)
-	{
-		printf("0\n");
-	}
 
 	for (i = 1; i < argc; i++)
 	{
-		if (*argv[i] >= '0' && *argv[i] <= '9')
+		char *arg = argv[i];
+
+		while (*arg)
 		{
-			s += atoi(argv[i]);
+			if (!isdigit(*arg))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			arg++;
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		sum += atoi(argv[i]);
 	}
-	printf("%ld\n", s);
+	printf("%d\n", sum);
 	return (0);
 }
