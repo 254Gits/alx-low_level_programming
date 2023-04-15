@@ -34,16 +34,16 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *j;
 	unsigned int full_size;
+	if (nmemb == 0 && size == 0)
+	{
+		return (NULL);
+	}
 
 	full_size = size * nmemb;
 
 	j = malloc(full_size);
 
 	if (j == NULL)
-	{
-		return (NULL);
-	}
-	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
