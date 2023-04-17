@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		printf("%d\n", 0);
 		return (1);
 	}
-	for (; cents > 0 ; cents++)
+	for (; cents > 0 ; change++)
 	{
 		if (cents >= 25)
 		{
@@ -46,7 +46,6 @@ int main(int argc, char *argv[])
 		{
 			cents = cents - 1;
 		}
-		change++;
 	}
 	printf("%d\n", change);
 	return (0);
