@@ -34,19 +34,19 @@ int main(int argc, char *argv[])
 		{
 			cents = cents - 10;
 		}
-		else if (cents >= 2)
-		{
-			cents = cents - 2;
-		}
 		else if (cents >= 5)
 		{
 			cents = cents - 5;
 		}
+		else if (cents >= 2)
+		{
+			cents = cents - 2;
+		}
 		else
 		{
-			cents =cents - 1;
+			cents = cents - 1;
 		}
-		change ++;
+		change++;
 	}
 	printf("%d\n", change);
 	return (0);
