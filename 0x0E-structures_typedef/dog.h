@@ -16,7 +16,24 @@ struct dog
 	char *owner;
 };
 
+/**
+ *struct dog_t - entry point
+ *@name: First char member pointer
+ *@age: Second float member
+ *@owner: Third member char pointer
+ *
+ *      Description: Longer description
+ */
+
+struct dog_t
+{
+	char *name;
+	float age;
+	char *owner;
+};
+
 /*
+ * dog-Typedef
  * dog_t - Typedef for unsigned int
  */
 
