@@ -4,17 +4,15 @@
  *print_name - entry point
  *
  *@name:character pointer
- *@f: function pointer
+ *@f: functions pointer
  *
  *
  *
- *Return: nothing
+ *Return: Nothing
  */
 
 void print_name(char *name, void (*f)(char *))
 {
 	if (name == NULL || f == NULL)
-	{
-	f(name);
-	}
+		f(name);
 }
