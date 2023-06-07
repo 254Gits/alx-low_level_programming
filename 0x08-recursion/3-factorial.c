@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *factorial(int n) - implementation of puts
+ *factorial - implementation of factorial
  *@n: pointer to character
  *
  *
@@ -15,12 +15,12 @@ int factorial(int n)
 	{
 		return (-1);
 	}
-	if (n == 1 || n == 0 )
+	if (n <= 1)
 	{
 		return (1);
 	}
-	else 
+	else
 	{
-		return (n * (n - 1));
+		return (n * factorial(n - 1));
 	}
 }
