@@ -3,3 +3,4 @@ char *_strdup(char *str);
 int _strlen_(char *s);
 char *str_concat(char *s1, char *s2);
 int _strlen_(char *s);
+int **alloc_grid(int width, int height);
