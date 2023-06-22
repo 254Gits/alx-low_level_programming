@@ -1,5 +1,4 @@
 #include <stddef.h>
-
 /**
  *print_name - entry point
  *@name: pointer to name
