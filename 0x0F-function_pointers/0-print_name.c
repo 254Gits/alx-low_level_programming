@@ -3,7 +3,7 @@
 /**
  *print_name - name is printed
  *@name: pointer to name
- *@f:function to pointer
+ *@f:function to pointer name
  *
  *
  */
