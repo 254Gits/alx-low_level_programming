@@ -1,10 +1,11 @@
 #include <stdio.h>
+
 #include "lists.h"
 
 /**
- * size_t print_list - entry point
+ * print_list - entry point
  * @list_t *h : pointer to head
- *
+ *@h :header
  * Return: Nothing
  */
 size_t print_list(const list_t *h)
@@ -15,7 +16,8 @@ size_t print_list(const list_t *h)
 	}
 	else
 	{
-		return (h-> len);
+		return (h->len);
+
 	}
 	return (0);
 }
