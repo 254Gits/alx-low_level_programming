@@ -1,5 +1,7 @@
 #ifndef HUY_u
 #define HUY_u
+ #include <stdio.h>
+ #include <stddef.h>
 /**
  *struct listint_s - singly linked list
  *@n: integer
@@ -8,12 +10,11 @@
  *Description: singly linked list node structure
  *
  */
-#include <stdio.h>
-#include <stddef.h>
+
 typedef struct listint_s
 {
 	int n;
 	struct listint_s *next;
-}listint_t;
+} listint_t;
 size_t print_listint(const listint_t *h);
 #endif
