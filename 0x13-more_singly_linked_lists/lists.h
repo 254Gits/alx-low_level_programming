@@ -1,4 +1,4 @@
-#ifndef
+#ifndef HUY_u
 #define HUY_u
 /**
  *struct listint_s - singly linked list
