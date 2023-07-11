@@ -1,14 +1,15 @@
 #include "main.h"
-
+/**
+ *get_bit- main entry point
+ *@n : long interger
+ *@index : value of bi
+ *
+ *Return: -1
+ */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int m;
+	if (index >= (sizeof(unsigned long int) * 8))
+		return (-1);
 
-	if (index > 0)
-	{
-		n = n << index;
-	}
-
-	m = 1 << index;
-	return ((n & m) != 0);
+	return ((n >> index) & 1);
 }
