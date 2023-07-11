@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- *clear_bit - entry point
+ *clear_bit- entry point
  *@n: long interger
  *@index: starting point
  *
  *
- *Return : 1 on success and -1 when it fails
+ *Return: 1 on success and -1 when it fails
  */
 
 int clear_bit(unsigned long int *n, unsigned int index)
