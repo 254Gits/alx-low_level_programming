@@ -1,59 +1,99 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-void close_file(FILE *file);
+void close_file(int fd);
+char *create_bufer(char *file);
 
-int main(int argc, char *argv[]) {
-	FILE *source;
-	FILE *destination;
-        char buffer[4096];
-	size_t bytes_read;
+/**
+ * create_buffer - set asides 1024 bytes
+ * @file: name of files buffer
+ *
+ *
+ * Return: newly allocated buffer
+ */
+char *create_buffer(char *file)
+{
+	char *buffer;
 
-	if (argc != 3) 
+	buffer = malloc(sizeof(char) * 1024);
+
+	if (buffer == NULL)
 	{
-		fprintf(stderr, "Usage: %s <source_file> <destination_file>\n", argv[0]);
-		exit(1);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		exit(99);
 	}
-	source = fopen(argv[1], "rb");
+	return (buffer);
+}
 
-	if (!source)
+/**
+ * close_file- closes file
+ * @f: The file descriptor
+ */
+
+void close_file(int f)
+{
+	int c;
+
+	c = close(f);
+
+	if (c == -1)
 	{
-		fprintf(stderr, "Error: Can't open source file '%s'\n", argv[1]);
-		exit(2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f);
+		exit(100);
 	}
-	destination = fopen(argv[2], "wb");
+}
+/**
+ * main - copies the content
+ * @argv: array of pointer
+ * @argc: number of arguments
+ *
+ * Return: 0
+ */
 
-	if (!destination)
+int main(int argc, char *argv[])
+{
+	int to, fr, r, w = 0;
+	char *buffer;
+
+	if (argc != 3)
 	{
-		fprintf(stderr, "Error: Can't create or write to destination file '%s'\n", argv[2]);
-		close_file(source);
-		exit(3);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
 
-	while ((bytes_read = fread(buffer, 1, sizeof(buffer), source)) > 0)
-	{
-		size_t bytes_written = fwrite(buffer, 1, bytes_read, destination);
+	buffer = create_buffer(argv[2]);
+	fr = open(argv[1], O_RDONLY);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-		if (bytes_written != bytes_read)
+	if (fr == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		free(buffer);
+		exit(98);
+	}
+
+	while ((r = read(fr, buffer, 1024)) > 0)
+	{
+		r = write(to, buffer, r);
+		if (to == -1 || w == -1)
 		{
-			fprintf(stderr, "Error: Failed to write to destination file '%s'\n", argv[2]);
-			close_file(source);
-			close_file(destination);
-			exit(4);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			free(buffer);
+			exit(99);
 		}
 	}
 
-	close_file(source);
-	close_file(destination);
-	printf("File '%s' successfully copied to '%s'\n", argv[1], argv[2]);
+	if (r == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		free(buffer);
+		exit(98);
+	}
+
+	free(buffer);
+	close(fr);
+	close(to);
+
 	return (0);
 }
-
-void close_file(FILE *file)
-{
-	if (file)
-	{
-		fclose(file);
-	}
-}
-
