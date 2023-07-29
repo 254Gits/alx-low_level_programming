@@ -50,7 +50,6 @@ void close_file(int f)
  *
  * Return: 0
  */
-
 int main(int argc, char *argv[])
 {
 	int to, fr, r, w = 0;
