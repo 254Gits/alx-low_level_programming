@@ -31,17 +31,23 @@ int check_validity(const char *b)
 unsigned int binary_to_unit(const char *b)
 {
 	unsigned int d = 0;
+	int cdse = 1, str_len = 0;
 
 	if(!check_validity(b))
 	{
 		return (0);
 	}
 
-	while (*b != '\0')
+	while (b[str_len]!= '\0')
 	{
-		d = d << 1;
-		d += (*b - '0');
-		b++;
+		str_len++;
+	}
+
+	while(str_len)
+	{
+		d += ((b[str_len -1] - '0') * cdse);
+		cdse *=2;
+		str_len--;
 	}
 	return (d);
 }
